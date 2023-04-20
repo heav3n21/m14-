@@ -1,0 +1,121 @@
+body {
+    background-color: rgb(208, 230, 213);
+    margin: 0;
+}
+
+nav {
+    background-color: rgb(43, 5, 5);
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(208, 230, 213);
+    font-style: italic;
+    position: static;
+
+
+}
+
+h3 {
+    margin-left: 40px;
+}
+
+h3 span {
+    margin-left: 28px;
+    cursor: pointer;
+}
+
+h3 span:hover {
+    font-size: large;
+
+}
+
+nav div {
+    margin: 50px;
+    margin-left: -253px;
+    background-color: rgb(208, 230, 213);
+    border-radius: 5px;
+    color: rgb(43, 5, 5);
+    box-shadow: 5px 5px rgba(153, 153, 153, 1);
+}
+
+nav div h1 {
+    margin-left: 40px;
+    margin-right: 40px;
+
+    font-weight: 300px;
+    font-style: normal;
+}
+
+.container {
+    display: grid;
+    width: 70%;
+    margin: 0 auto;
+    border: 4px solid rgb(43, 5, 5);
+    margin-top: 10px;
+    border-radius: 3px;
+}
+
+.title {
+    background-color: rgb(43, 5, 5);
+    color: rgb(153, 153, 153);
+    padding-bottom: 10px;
+    padding-top: 5px;
+
+}
+
+.container .text {
+    margin: 15px;
+}
+
+.textTitle {
+    font-weight: bolder;
+    font-size: large;
+    margin: 15px;
+    margin-bottom: 10px;
+}
+
+.newPost {
+    display: grid;
+    background-color: rgb(43, 5, 5);
+    color: rgb(208, 230, 213);
+    padding: 15px;
+    width: 15%;
+    margin: 0 auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: x-large;
+}
+
+.newPost:hover {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+label {
+    display: grid;
+    font-size: large;
+
+    margin: 10px;
+}
+
+input {
+    display: grid;
+    font-size: large;
+    margin: auto;
+    width: 95%;
+
+}
+
+.btnSubmit {
+    display: grid;
+    font-size: large;
+    margin: 10px auto;
+    width: 70%;
+    border: 0;
+    padding: 5px;
+}
+.btnSubmit:hover{
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    color: rgb(247, 247, 242);
+
+}
