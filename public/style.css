@@ -4,7 +4,7 @@ body {
 }
 
 nav {
-    background-color: rgb(43, 5, 5);
+    background-color: rgb(31, 10, 10);
     display: flex;
     flex-wrap: wrap;
     color: rgb(208, 230, 213);
@@ -49,13 +49,13 @@ nav div h1 {
     display: grid;
     width: 70%;
     margin: 0 auto;
-    border: 4px solid rgb(43, 5, 5);
+    border: 4px solid  rgb(31, 10, 10);
     margin-top: 10px;
     border-radius: 3px;
 }
 
 .title {
-    background-color: rgb(43, 5, 5);
+    background-color: rgb(31, 10, 10);
     color: rgb(153, 153, 153);
     padding-bottom: 10px;
     padding-top: 5px;
@@ -75,7 +75,7 @@ nav div h1 {
 
 .newPost {
     display: grid;
-    background-color: rgb(43, 5, 5);
+    background-color: rgb(31, 10, 10);
     color: rgb(208, 230, 213);
     padding: 15px;
     width: 15%;
