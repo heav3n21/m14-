@@ -13,6 +13,10 @@ nav {
 
 
 }
+.Link{
+    color: blue;
+    cursor: pointer;
+}
 
 h3 {
     margin-left: 40px;

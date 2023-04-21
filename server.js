@@ -1,5 +1,3 @@
-
-
 const express = require('express');
 const session = require('express-session')
 const routes = require('./controller/index');
@@ -30,6 +28,7 @@ const sess = {
 app.use(session(sess));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,13 +1,22 @@
- <nav>
-        <h3> <span>Home</span> <span> Dashboard</span> <span> Logout </span></h3>
-        <div>
-            <h1>The Tech Blog</h1>
-        </div>
-    </nav>
+ {{#if loggedIn}}
+ {{#each mutiposts as |post|}}
     <section class="container">
-        <div class="title"> <span class="textTitle">Why i love to code</span> <span> ON :</span></div>
-        <div class="text">theasdfasdfasdfasfdasdf </div>
+        <div class="title"> <span class="textTitle">{{post.Title}}</span> <span> ON :</span></div>
+        <div class="text">{{post.Description}} </div>
     </section>
     <button class="newPost"> +New Post</button>
    
     </section>
+    {{/each}}
+    {{else}}
+<section class="sectionROUTE ">
+ <div class="card shadow border position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
+  <h1>MUST LOG IN!</h1>
+       
+        <div class="card-body">
+          <p class="card-text"> 
+            Please <a href="http://localhost:3001/login"> login</a> to access for the homepage
+          </p>
+        </div>
+      </div>
+{{/if}}
