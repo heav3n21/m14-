@@ -9,18 +9,18 @@ const seedDatabase = async () => {
   try {
     
     await sequelize.sync({ force: true });
-    const usersWithUuid = userData.map((user) => ({
-      ...user,
-      id: uuidv4(),
-    }));
+    // const usersWithUuid = userData.map((user) => ({
+    //   ...user,
+    //   // id: uuidv4(),
+    // }));
     
-    const users = await User.bulkCreate(usersWithUuid);
-    for(const post of postData){
-      await Posts.create({
-        ...post,
-        user_id: users[Math.floor(math.random()*empolyers.length)].id
-      });
-    }
+    await User.bulkCreate(userData)
+    // });
+    // for(const {id} of user){
+    //   const newUser = await Posts.create(postData,{
+    //   user_id: id,
+    //   });
+    // }
     
     process.exit(0);
   } catch (error) {

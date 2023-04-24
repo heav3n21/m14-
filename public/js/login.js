@@ -13,20 +13,20 @@ viewLogin.addEventListener('click', () => {
     formLogin.style.display = 'none'
 })
 
-btnSignUp.addEventListener('click', (e) => {
-    e.defaultPrevented();
-    console.log('hi')
-})
+// btnSignUp.addEventListener('click', (e) => {
+//     e.defaultPrevented();
+    
+// })
 
 
 const loginForm = async(e) => {
+
     e.preventDefault();
-    const username = document.getElementById('txtLogin').value.trim();;
+    const username = document.getElementById('txtLogin').value.trim();
     const password = document.getElementById('txtPassword').value.trim();
-    console.log(txtLogin, txtPassword);
+    
 
-
-    if (txtLogin && txtPassword) {
+    if (username && password) {
         const response = await fetch('http://localhost:3001/api/user/login', {
             method: 'POST',
             body: JSON.stringify({ password, username }),
@@ -39,17 +39,34 @@ const loginForm = async(e) => {
         } else {
             alert("fail")
         }
+    }
+}
+const SignupForm = async(e)=>{
+    e.preventDefault();
+
+    const username = document.getElementById('txtSignUp').value.trim();
+    const password = document.getElementById('txtSignupPassword').value.trim();
+    console.log(username, password);
+    if(username && password){
+        const response = await fetch('http://localhost:3001/api/user', {
+            method: 'POST',
+            body: JSON.stringify({ password, username }),
+            headers:{'Content-Type': 'application/json'},
+        });
+        if(response.ok){
+            document.location.replace('/');
+        }else{  
+            alert('fail')
+        }
 
     }
-
-
-
 
 
 }
 
 
 btnLogin.addEventListener('click',loginForm)
+btnSignUp.addEventListener('click',SignupForm)
 
 
 

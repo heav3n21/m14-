@@ -13,6 +13,10 @@ nav {
 
 
 }
+nav a{
+    margin: 10px;
+    cursor: pointer;
+}
 .Link{
     color: blue;
     cursor: pointer;

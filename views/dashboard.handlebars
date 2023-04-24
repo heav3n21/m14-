@@ -1,9 +1,28 @@
-{{#if loggedIn}}
+{{#if logged_in}}
 
+<section class="container">
+    <div class="title"> <span class="textTitle">Create New Post</span> </div>
+    <form>
+        <label for="name">Title</label>
+        <input id="txtPostTitle" type="text">
+        <label  for="text">content</label>
+        <input id="txtPostDescript" type="text">
+        <button id="btnCreatePost" class="btnSubmit">Create</button>
+       
+    </form>
+</section>
 
+<button class="newPost"> +New Post</button>
+{{#each posts as |post|}}
+    <section class="container">
+        <div class="title"> <span class="textTitle">{{post.Title}}</span> <span> ON :</span></div>
+        <div class="text">{{post.Description}} </div>
+    </section>
+   
+    </section>
+    {{/each}}
 
-
-
+<script src="/js/dashboard.js"></script>
 {{else}}
 <section class="sectionROUTE ">
  <div class="card shadow border position-absolute top-50 start-50 translate-middle" style="width: 18rem;">
@@ -11,7 +30,7 @@
         <img src="/svgs/grooming-1801287.svg" class="card-img-top" alt="...">
         <div class="card-body">
           <p class="card-text"> 
-            Please <a href="https://pure-lowlands-78827.herokuapp.com/login"> login</a> to access for the homepage
+            Please <a href="http://localhost:3001/login"> login</a> to access for the homepage
           </p>
         </div>
       </div>

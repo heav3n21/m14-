@@ -17,6 +17,9 @@ const sess = {
   secret:" process.env.DB_secret",
   cookie: {
     maxAge: 42 * 60 * 60 * 1000,
+    httpOnly: true,
+    secure: false,
+  
   },
   resave: false,
   saveUnitialized: true,
@@ -38,6 +41,6 @@ app.use(routes);
 
 // turn on connection to db and server
 //force is to drop DB
-sequelize.sync({ force: true}).then(() => {
+sequelize.sync({ force: false}).then(() => {
   app.listen(PORT, () => console.log(`Now listening${PORT}`));
 });

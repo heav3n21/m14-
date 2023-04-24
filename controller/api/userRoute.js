@@ -16,10 +16,11 @@ router.get("/", (req, res) => {
   });
   router.post("/", async (req, res) => {
     try {
-      const userData = await User.create(req.body);
+      const userData = await User.create(req.body,);
   
       req.session.save(() => {
-        req.session.loggedIn = true;
+        req.session.user_id = userData.id;
+      req.session.logged_in = true;
       });
       res.status(200).json(userData);
     } catch (error) {
@@ -30,7 +31,7 @@ router.get("/", (req, res) => {
     try {
       const UserData = await User.findOne({
         where: {
-          username: req.body.username,
+          username: req.body.username
         },
       });
   
@@ -50,7 +51,8 @@ router.get("/", (req, res) => {
       }
   
       req.session.save(() => {
-        req.session.loggedIn = true;
+        req.session.logged_in = true;
+        req.session.user_id = UserData.id;
   
         res
           .status(200)
@@ -61,7 +63,15 @@ router.get("/", (req, res) => {
       res.status(500).json(err);
     }
   });
-
+  router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 
 
