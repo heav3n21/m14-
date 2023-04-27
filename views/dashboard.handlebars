@@ -15,7 +15,7 @@
 <button class="newPost"> +New Post</button>
 {{#each posts as |post|}}
     <section class="container">
-        <div class="title"> <span class="textTitle">{{post.Title}}</span> <span> ON :</span></div>
+        <div class="title"> <span class="textTitle">{{post.Title}}</span> <span> ON :{{format_date post.createdAt}}</span></div>
         <div class="text">{{post.Description}} </div>
     </section>
    

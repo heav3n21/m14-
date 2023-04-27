@@ -34,7 +34,7 @@ file in your terminal. The tool will guide you through the process of creating y
 
 
     
-![its an img](c)
+![its an img](./m14.PNG)
 
 ## Credits
 * Collaborators
